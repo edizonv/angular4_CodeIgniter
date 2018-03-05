@@ -1,6 +1,6 @@
 # angular4_codeigniter_final
-Angular 4 Practice with Codeigniter Framework
--Login
--Search
--CRUD
--Pagination(Data Table)
+<br>Angular 4 Practice with Codeigniter Framework
+<br>-Login
+<br>-Search
+<br>-CRUD
+<br>-Pagination(Data Table)
