@@ -1,0 +1,26 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.archive {
+  background: #eee;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media print {
+  
+  @page { size: auto;  margin: 0mm; }
+
+  app-header,
+  button,
+  h2 {
+      display: none;
+  }
+
+  table {
+      display: block !important;
+  }
+}

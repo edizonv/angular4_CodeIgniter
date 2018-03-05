@@ -1,0 +1,19 @@
+
+<div [ngSwitch]="activePage">
+	<div *ngSwitchCase="1">
+		<h2>Archives</h2>
+		<app-archives>Loading...</app-archives>
+	</div>
+	<div *ngSwitchCase="2">
+		<h2>User Management</h2>
+		<app-member-manage>Loading...</app-member-manage>
+	</div>
+	<div *ngSwitchCase="4">
+		<h2>Manage User</h2>
+		<app-member-single>Loading...</app-member-single>
+	</div>
+	<div *ngSwitchCase="5">
+		<h2>User Management</h2>
+		<app-members-all>Loading...</app-members-all>
+	</div>
+</div>

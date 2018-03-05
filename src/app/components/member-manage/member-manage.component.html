@@ -1,0 +1,22 @@
+<h3 *ngIf="isAdd; else isEdits">Add</h3>
+<ng-template #isEdits><h3>Edit</h3></ng-template>
+
+<p [innerHTML]="msg"></p>
+
+<form [formGroup]="ngForm" (ngSubmit)="onSubmit(ngForm.value)">
+  <div class="form-group">
+    <label for="user_firstname">Firstname</label>
+    <input type="text" formControlName="user_firstname" [(ngModel)]="user_firstname" id="user_firstname">
+  </div>
+  <div class="form-group">
+    <label for="user_lastname">Lastname</label>
+    <input type="text" formControlName="user_lastname" [(ngModel)]="user_lastname" id="user_lastname">
+  </div>
+  <div class="form-group">
+    <button [disabled]="!ngForm.valid" *ngIf="isAdd; else isEdit">Add</button>
+    <ng-template #isEdit>
+      <input type="hidden" formControlName="idUser" [(ngModel)]="idUser">
+      <button [disabled]="!ngForm.valid">Edit</button>
+    </ng-template>
+  </div>
+</form>

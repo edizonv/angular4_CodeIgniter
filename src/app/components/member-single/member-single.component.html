@@ -1,0 +1,19 @@
+<button (click)="print()">Print Preview</button>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Date Registered</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ member.id }}</td>
+      <td>{{ member.fullName }}</td>
+      <td>{{ member.dateAdded | date: 'medium' }}</td>
+      <td>{{ member.status | setStatus }}</td>
+    </tr>
+  </tbody>
+</table>

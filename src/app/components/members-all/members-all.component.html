@@ -1,0 +1,46 @@
+<ul>
+  <li><a routerLink="/members/add">New Member</a></li>
+  <li><a routerLink="/members/archives">Archives</a></li>
+</ul>
+<div>
+  <input type="text" (keyup)="keyUp.next($event)">
+</div>
+<p [innerHTML]="msg"></p>
+<div class="memberForm">
+  <!-- <table> -->
+  <table *ngIf="(members)?.length>0; else noMember" datatable class="table hover stripe">
+    <thead>
+      <tr>
+        <td colspan="6">Total : <strong>{{ members.length }}</strong></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date Registered</th>
+        <th>Status</th>
+        <th>Manage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of members; let i = index;">
+        <td><input type="checkbox" (change)="selChk(member.id, i)"  [checked]="false"></td>
+        <td>{{ member?.id }}</td>
+        <td>{{ member?.fullName }}</td>
+        <td>{{ member?.dateAdded | date: 'medium' }}</td>
+        <td>{{ member.status | setStatus }}</td>
+        <td>
+          <ul>
+            <li><a routerLink="/members/{{ member?.id }}">View</a></li>
+            <li><a routerLink="/members/edit/{{ member?.id }}">Edit</a></li>
+            <li><a (click)="delete(member?.id, i)">Delete</a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="removeSel()">Delete Selected</button>
+</div>
+<ng-template #noMember>
+ <p>No Member</p>
+</ng-template>

@@ -1,0 +1,9 @@
+<nav *ngIf="user;">
+  <ul>
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/members">Members</a></li>
+    <li><a (click)="logout(user)">Logout</a></li>
+  </ul>
+</nav>
+<p *ngIf="user;">Welcome : {{ user }}</p>
+<hr />
