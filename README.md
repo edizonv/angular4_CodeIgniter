@@ -1,4 +1,4 @@
-# angular4_codeigniter_final
+# Simple CRUD using Angular4 and Codeigniter
 <br>Angular 4 Practice with Codeigniter Framework
 <br>-Login
 <br>-Search
